@@ -1,2 +1,3 @@
 #!/bin/bash
-for item in $(ls -m); do [ -d "$item" ] && echo "$item/"; done
+ls -1 | awk '{if(system("[ -d \"" $1 "\" ]") == 0) {printf("%s/, ", $1);} else {printf("%s, ", $1);}}' | sed 's/,$//g'
+
