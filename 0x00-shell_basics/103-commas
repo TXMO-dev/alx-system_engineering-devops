@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a -m -F
+ls -m | awk '/\/$/{printf $0"/"} !/\/$/{printf $0","}' | sed 's/,$//'
