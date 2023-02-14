@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -mindepth 1 -maxdepth 1 -type d | wc -l
+ls -lt1 | grep -v "^d" | cut -d " " -f 9-
